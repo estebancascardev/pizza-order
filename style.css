@@ -1,0 +1,132 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background-image: linear-gradient(rgba(126, 105, 91, 0.75), rgba(180, 159, 145, 0.75)), 
+        url('https://images.unsplash.com/photo-1555396273-367ea4eb4db5?q=80&w=1600&auto=format&fit=crop');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.order-form {
+    width: 320px;
+    height: 160px;
+    background: linear-gradient(145deg, #1b1a1a, #2b2825);
+    color: #f8f9fa;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 24px 20px 10px 20px;
+    margin-top: 0;
+    border-radius: 160px 160px 0 0;
+    border: 1px solid rgba(223, 219, 199, 0.15);
+    border-bottom: none;
+    box-shadow: 0 -8px 25px rgba(0, 0, 0, 0.7);
+    z-index: 2;
+    margin-bottom: -15px;
+}
+
+.order-form p {
+    font-size: 12px;
+    font-weight: 500;
+    text-align: center;
+    color: #e0d8d0;
+    line-height: 1.4;
+}
+
+#submit {
+    padding: 10px 22px;
+    background: linear-gradient(135deg, #e63946, #c1121f);
+    color: #ffffff;
+    border: none;
+    border-radius: 25px;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(230, 57, 70, 0.4);
+    transition: all 0.2s ease-in-out;
+}
+
+#submit:hover {
+    background: linear-gradient(135deg, #ff4d5a, #d90429);
+    transform: translateY(-1px);
+}
+
+.image-container {
+    width: 100vw;
+    height: auto;
+    max-height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    overflow: hidden;
+}
+
+.pizza-img {
+    height: auto;
+    width: 320px;
+    object-fit: contain;
+    transform: rotate(270deg) scale(1.1);
+    transform-origin: center center;
+    filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.5));
+}
+
+@media screen and (min-width: 1200px) {
+    main {
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 60px;
+    }
+
+    .image-container {
+        width: auto;
+        height: auto;
+        max-height: none;
+        overflow: visible;
+    }
+
+    .pizza-img {
+        width: 420px;
+        height: auto;
+        transform: rotate(180deg) scale(1);
+        object-fit: contain;
+        filter: drop-shadow(-10px 10px 25px rgba(0, 0, 0, 0.7));
+    }
+
+    .order-form {
+        width: 380px;
+        height: auto;
+        min-height: 280px;
+        border-radius: 20px;
+        border: 1px solid rgba(255, 215, 0, 0.2);
+        padding: 40px 30px;
+        margin: 0;
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+    }
+
+    .order-form p {
+        font-size: 15px;
+    }
+
+    #submit {
+        padding: 12px 28px;
+        font-size: 14px;
+        margin-top: 10px;
+    }
+}

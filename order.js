@@ -3,6 +3,7 @@ const stepOne = document.querySelector("#start");
 const stepTwo = document.querySelector("#process");
 const stepThree = document.querySelector("#end");
 const stepError = document.querySelector("#error");
+const button = document.querySelector("#submit");
 
 const random = () => {
     return Math.random() < 0.8; 
@@ -22,6 +23,7 @@ const pizzaOrderFinish = () => new Promise((resolve, reject) => {
 
 orderList.addEventListener("submit", async e =>{
     e.preventDefault();
+    button.setAttribute("disabled", "true");
     pizzaOrderStart()
         .then(response => {
             console.log(response);

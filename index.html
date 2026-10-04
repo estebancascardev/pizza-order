@@ -1,18 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Order</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <form>
-        <p id="start"></p>
-        <p id="process"></p>
-        <p id="end"></p>
-        <p id="error"></p>
-        <input type="submit">
-    </form>
+    <main class="main-layout">
+
+        <form class="order-form">
+            <p id="start"></p>
+            <p id="process"></p>
+            <p id="end"></p>
+            <p id="error"></p>
+            <input type="submit" id="submit" value="Enviar Orden">
+        </form>
+
+        <div class="image-container">
+            <img src="image/pizza.webp" alt="Pizza" class="pizza-img">
+        </div>
+    </main>
+
     <script src="order.js"></script>
 </body>
 </html>
