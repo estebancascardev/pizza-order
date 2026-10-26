@@ -2,6 +2,7 @@ const orderList = document.querySelector("form");
 const stepOne = document.querySelector("#start");
 const stepTwo = document.querySelector("#process");
 const stepThree = document.querySelector("#end");
+const stepFourth = document.querySelector("#final");
 const stepError = document.querySelector("#error");
 const button = document.querySelector("#submit");
 
@@ -10,15 +11,19 @@ const random = () => {
 };
 
 const pizzaOrderStart = () => new Promise((resolve, reject) => {
-    setTimeout(()=>{random() ? resolve("Pedido realizado") : reject("Pedido fallido");}, 2000);
+    setTimeout(()=>{random() ? resolve("Pedido realizado, entregando su bebida") : reject("Pedido fallido");}, 2000);
 });
 
 const pizzaOrderProcess = () => new Promise((resolve, reject) => {
-    setTimeout(()=>{random() ? resolve("Pedido en proceso, espere un momento") : reject("Pedido fallido");}, 4000);
+    setTimeout(()=>{random() ? resolve("Bebida entregada, espere un momento por la pizza") : reject("Pedido fallido");}, 4000);
 });
 
 const pizzaOrderFinish = () => new Promise((resolve, reject) => {
-    setTimeout(()=>{random() ? resolve("Pedido finalizado, disfrute su pizza") : reject("Pedido fallido");}, 6000);
+    setTimeout(()=>{random() ? resolve("Pizza entregada, espere por su postre") : reject("Pedido fallido");}, 6000);
+});
+
+const pizzaOrder = () => new Promise((resolve, reject) => {
+    setTimeout(()=>{random() ? resolve("Postre entregado, disfrute su comida") : reject("Pedido fallido");}, 8000);
 });
 
 orderList.addEventListener("submit", async e =>{
@@ -36,6 +41,10 @@ orderList.addEventListener("submit", async e =>{
         }).then(processFinish => {
             console.log(processFinish);
             stepThree.innerHTML = processFinish;
+            return pizzaOrder(processFinish)
+        }).then(processFinal =>{
+            console.log(processFinal)
+            stepFourth.innerHTML = processFinal;
         }).catch(processFail=>{
             console.log(processFail);
             stepError.innerHTML = processFail;
